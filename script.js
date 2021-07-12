@@ -300,5 +300,5 @@ function runTests() {
 window.addEventListener('load', ()=> {
 	setTimeout(()=>{ // precompile jsx instead asap
 		ReactDOM.render(<App/>, document.querySelector('main'));
-	})
+	}, 500);
 });
