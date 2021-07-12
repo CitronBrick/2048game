@@ -251,7 +251,7 @@ function App() {
 	return <React.Fragment>
 		<h1>2048 Game</h1>
 		<div className="panel">
-			<span>Score: <span id="score">{score}</span></span> <button onClick={startNewGame}>New Game</button>.
+			<span>Score: <span id="score">{score}</span></span> <button onClick={startNewGame}>New Game</button>
 		</div>
 		<Grid setScore={setScore} setResult={setResult}  />
 		<output>{result}</output>
@@ -298,5 +298,7 @@ function runTests() {
 }
 
 window.addEventListener('load', ()=> {
-	ReactDOM.render(<App/>, document.querySelector('main'));
+	setTimeout(()=>{ // precompile jsx instead asap
+		ReactDOM.render(<App/>, document.querySelector('main'));
+	})
 });
